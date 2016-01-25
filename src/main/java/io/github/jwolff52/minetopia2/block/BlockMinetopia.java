@@ -1,0 +1,20 @@
+package io.github.jwolff52.minetopia2.block;
+
+import io.github.jwolff52.minetopia2.ref.N;
+
+public class BlockMinetopia extends BlockM2{
+
+	public BlockMinetopia() {
+		super();
+        this.setBlockName(N.Blocks.MINETOPIA);
+	}
+
+	//This is for when i get my chest working, eventually
+	/*
+	static void onBlockActivated(EntityPlayer player){
+		//player.addStat(Minetopia.MinetopiaBlockAchievement, 1);
+	}
+	*/
+
+	
+}
