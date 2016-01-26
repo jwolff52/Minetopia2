@@ -1,6 +1,6 @@
 package io.github.jwolff52.minetopia2.ref;
 
-public final class N {
+public final class Names {
     public static final class Blocks {
         public static final String ALCHEMY_CHEST = "alchemyChest";
         public static final String MINETOPIA = "minetopia";
@@ -17,5 +17,6 @@ public final class N {
 
     public static final class Containers {
         public static final String ALCHEMY_CHEST = "container.m2:" + Blocks.ALCHEMY_CHEST;
+        public static final String VANILLA_INVENTORY = "contianer.inventory";
     }
 }

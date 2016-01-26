@@ -4,7 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import io.github.jwolff52.minetopia2.Minetopia2;
 import io.github.jwolff52.minetopia2.ref.GUIs;
-import io.github.jwolff52.minetopia2.ref.N;
+import io.github.jwolff52.minetopia2.ref.Names;
 import io.github.jwolff52.minetopia2.ref.RenderIds;
 import io.github.jwolff52.minetopia2.tileentity.TileEntityAlchemyChest;
 import io.github.jwolff52.minetopia2.tileentity.TileEntityAlchemyChestLarge;
@@ -26,7 +26,7 @@ public class BlockAlchemyChest extends BlockTileEntityM2{
 	public BlockAlchemyChest(){
 		super(Material.wood);
         this.setHardness(2.5f);
-        this.setBlockName(N.Blocks.ALCHEMY_CHEST);
+        this.setBlockName(Names.Blocks.ALCHEMY_CHEST);
         this.setBlockBounds(0.0625f, 0.0f, 0.0625f, 0.9375f, 0.875f, 0.9375f);
 	}
 

@@ -6,7 +6,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
-public class ContainerAlchemicalChest extends ContainerM2{
+public class ContainerAlchemyChest extends ContainerM2{
     //Small Chest
     public static final int SMALL_CHEST_INVENTORY_ROWS = 4;
     public static final int SMALL_CHEST_INVENTORY_COLUMNS = 12;
@@ -24,7 +24,7 @@ public class ContainerAlchemicalChest extends ContainerM2{
     private int chestInventoryRows;
     private int chestInventoryColumns;
 
-    public ContainerAlchemicalChest(InventoryPlayer inventoryPlayer, TileEntityAlchemyChest tileEntityAlchemyChest) {
+    public ContainerAlchemyChest(InventoryPlayer inventoryPlayer, TileEntityAlchemyChest tileEntityAlchemyChest) {
         this.tileEntityAlchemyChest = tileEntityAlchemyChest;
         tileEntityAlchemyChest.openInventory();
 

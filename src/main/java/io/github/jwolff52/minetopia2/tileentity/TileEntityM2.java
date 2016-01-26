@@ -2,7 +2,7 @@ package io.github.jwolff52.minetopia2.tileentity;
 
 import io.github.jwolff52.minetopia2.network.PacketHandler;
 import io.github.jwolff52.minetopia2.network.messages.MessageTileEntityM2;
-import io.github.jwolff52.minetopia2.ref.N;
+import io.github.jwolff52.minetopia2.ref.Names;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.Packet;
 import net.minecraft.tileentity.TileEntity;
@@ -73,24 +73,24 @@ public class TileEntityM2 extends TileEntity {
     {
         super.readFromNBT(nbtTagCompound);
 
-        if (nbtTagCompound.hasKey(N.NBT.DIRECTION))
+        if (nbtTagCompound.hasKey(Names.NBT.DIRECTION))
         {
-            this.orientation = ForgeDirection.getOrientation(nbtTagCompound.getByte(N.NBT.DIRECTION));
+            this.orientation = ForgeDirection.getOrientation(nbtTagCompound.getByte(Names.NBT.DIRECTION));
         }
 
-        if (nbtTagCompound.hasKey(N.NBT.STATE))
+        if (nbtTagCompound.hasKey(Names.NBT.STATE))
         {
-            this.state = nbtTagCompound.getByte(N.NBT.STATE);
+            this.state = nbtTagCompound.getByte(Names.NBT.STATE);
         }
 
-        if (nbtTagCompound.hasKey(N.NBT.CUSTOM_NAME))
+        if (nbtTagCompound.hasKey(Names.NBT.CUSTOM_NAME))
         {
-            this.customName = nbtTagCompound.getString(N.NBT.CUSTOM_NAME);
+            this.customName = nbtTagCompound.getString(Names.NBT.CUSTOM_NAME);
         }
 
-        if (nbtTagCompound.hasKey(N.NBT.OWNER_UUID_MOST_SIG) && nbtTagCompound.hasKey(N.NBT.OWNER_UUID_LEAST_SIG))
+        if (nbtTagCompound.hasKey(Names.NBT.OWNER_UUID_MOST_SIG) && nbtTagCompound.hasKey(Names.NBT.OWNER_UUID_LEAST_SIG))
         {
-            this.ownerUUID = new UUID(nbtTagCompound.getLong(N.NBT.OWNER_UUID_MOST_SIG), nbtTagCompound.getLong(N.NBT.OWNER_UUID_LEAST_SIG));
+            this.ownerUUID = new UUID(nbtTagCompound.getLong(Names.NBT.OWNER_UUID_MOST_SIG), nbtTagCompound.getLong(Names.NBT.OWNER_UUID_LEAST_SIG));
         }
     }
 
@@ -99,18 +99,18 @@ public class TileEntityM2 extends TileEntity {
     {
         super.writeToNBT(nbtTagCompound);
 
-        nbtTagCompound.setByte(N.NBT.DIRECTION, (byte) orientation.ordinal());
-        nbtTagCompound.setByte(N.NBT.STATE, state);
+        nbtTagCompound.setByte(Names.NBT.DIRECTION, (byte) orientation.ordinal());
+        nbtTagCompound.setByte(Names.NBT.STATE, state);
 
         if (this.hasCustomName())
         {
-            nbtTagCompound.setString(N.NBT.CUSTOM_NAME, customName);
+            nbtTagCompound.setString(Names.NBT.CUSTOM_NAME, customName);
         }
 
         if (this.hasOwner())
         {
-            nbtTagCompound.setLong(N.NBT.OWNER_UUID_MOST_SIG, ownerUUID.getMostSignificantBits());
-            nbtTagCompound.setLong(N.NBT.OWNER_UUID_LEAST_SIG, ownerUUID.getLeastSignificantBits());
+            nbtTagCompound.setLong(Names.NBT.OWNER_UUID_MOST_SIG, ownerUUID.getMostSignificantBits());
+            nbtTagCompound.setLong(Names.NBT.OWNER_UUID_LEAST_SIG, ownerUUID.getLeastSignificantBits());
         }
     }
 

@@ -8,6 +8,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import io.github.jwolff52.minetopia2.handler.ConfigurationHandler;
+import io.github.jwolff52.minetopia2.handler.GuiHandler;
 import io.github.jwolff52.minetopia2.init.ModBlocks;
 import io.github.jwolff52.minetopia2.init.ModItems;
 import io.github.jwolff52.minetopia2.init.Recipes;
@@ -36,8 +37,6 @@ public class Minetopia2 {
      */
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e) {
-        instance = this;
-
         ConfigurationHandler.init(e.getSuggestedConfigurationFile());
 
         PacketHandler.init();
@@ -61,11 +60,13 @@ public class Minetopia2 {
      */
     @Mod.EventHandler
     public void init(FMLInitializationEvent e) {
-        FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
-
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 
         TileEntities.init();
+
+        proxy.initRenderingAndTextures();
+
+        FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 
         Recipes.init();
 

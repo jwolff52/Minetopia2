@@ -1,0 +1,11 @@
+# Blocks
+tile.minetopia2:minetopia.name=Minetopia
+tile.minetopia2:alchemyChest.name=Alchemy Chest
+
+# Creative Tabs
+itemGroup.minetopia2=Minetopia 2
+
+# Tooltips
+tooltip.m2:small=Small
+tooltip.m2:medium=Medium
+tooltip.m2:large=Large

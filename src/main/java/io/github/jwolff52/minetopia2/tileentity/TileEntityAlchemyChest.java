@@ -1,8 +1,8 @@
 package io.github.jwolff52.minetopia2.tileentity;
 
 import io.github.jwolff52.minetopia2.init.ModBlocks;
-import io.github.jwolff52.minetopia2.inventory.ContainerAlchemicalChest;
-import io.github.jwolff52.minetopia2.ref.N;
+import io.github.jwolff52.minetopia2.inventory.ContainerAlchemyChest;
+import io.github.jwolff52.minetopia2.ref.Names;
 import io.github.jwolff52.minetopia2.ref.Sounds;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -25,15 +25,15 @@ public class TileEntityAlchemyChest extends TileEntityM2 implements IInventory {
 
         if (metaData == 0)
         {
-            inventory = new ItemStack[ContainerAlchemicalChest.SMALL_INVENTORY_SIZE];
+            inventory = new ItemStack[ContainerAlchemyChest.SMALL_INVENTORY_SIZE];
         }
         else if (metaData == 1)
         {
-            inventory = new ItemStack[ContainerAlchemicalChest.MEDIUM_INVENTORY_SIZE];
+            inventory = new ItemStack[ContainerAlchemyChest.MEDIUM_INVENTORY_SIZE];
         }
         else if (metaData == 2)
         {
-            inventory = new ItemStack[ContainerAlchemicalChest.LARGE_INVENTORY_SIZE];
+            inventory = new ItemStack[ContainerAlchemyChest.LARGE_INVENTORY_SIZE];
         }
 	}
 
@@ -86,7 +86,7 @@ public class TileEntityAlchemyChest extends TileEntityM2 implements IInventory {
 
     @Override
     public String getInventoryName() {
-        return this.hasCustomName() ? this.getCustomName() : N.Containers.ALCHEMY_CHEST;
+        return this.hasCustomName() ? this.getCustomName() : Names.Containers.ALCHEMY_CHEST;
     }
 
     @Override
@@ -177,7 +177,7 @@ public class TileEntityAlchemyChest extends TileEntityM2 implements IInventory {
 	public void readFromNBT(NBTTagCompound tagCompound){
 		super.readFromNBT(tagCompound);
 		
-		NBTTagList tagList=tagCompound.getTagList(N.NBT.ITEMS, 10);
+		NBTTagList tagList=tagCompound.getTagList(Names.NBT.ITEMS, 10);
 		for(int i=0; i<tagList.tagCount();i++){
 			NBTTagCompound tag = tagList.getCompoundTagAt(i);
 			byte slot=tag.getByte("Slot");

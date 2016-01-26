@@ -3,7 +3,7 @@ package io.github.jwolff52.minetopia2.block;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import io.github.jwolff52.minetopia2.creativetab.CreativeTabM2;
-import io.github.jwolff52.minetopia2.ref.T;
+import io.github.jwolff52.minetopia2.ref.Textures;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -20,7 +20,7 @@ public class BlockM2 extends Block {
 
     @Override
     public String getUnlocalizedName() {
-        return String.format("tile.%s%s", T.RESOURCE_PREFIX, getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+        return String.format("tile.%s%s", Textures.RESOURCE_PREFIX, getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
     }
 
     @Override
